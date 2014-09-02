@@ -14,8 +14,8 @@ namespace InnovationDay.AcceptanceTesting.Specs
         [Given]
         public void Given_I_enter_a_valid_username_and_password()
         {
-            Session<LocalFirefox>
-                .Current
+            Threaded<Session>
+                .With<LocalFirefox>()
                 .NavigateTo<LoggedOutPage>("https://www.nirvanahq.com/account/login")
                 .LoginArea
                 .Username.EnterText("todd@meinershagen.net")
@@ -25,8 +25,7 @@ namespace InnovationDay.AcceptanceTesting.Specs
         [When]
         public void When_I_login()
         {
-            Session<LocalFirefox>
-                .Current
+            Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
                 .LoginButton.Click();
@@ -35,8 +34,7 @@ namespace InnovationDay.AcceptanceTesting.Specs
         [Then]
         public void Then_I_should_be_taken_to_the_home_page()
         {
-            Session<LocalFirefox>
-                .Current
+            Threaded<Session>
                 .CurrentBlock<LoggedInPage>()
                 .Verify(x => x.Session.Driver.PageSource.Contains("Search"))
                 .NorthArea

@@ -2,6 +2,7 @@
 using Bumblebee.Setup;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 
 namespace InnovationDay.AcceptanceTesting.Specs.Infrastructure
 {
@@ -9,7 +10,8 @@ namespace InnovationDay.AcceptanceTesting.Specs.Infrastructure
     {
         public IWebDriver CreateWebDriver()
         {
-            var driver = new FirefoxDriver();
+            //var driver = new FirefoxDriver();
+            var driver = new InternetExplorerDriver();
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
             return driver;
