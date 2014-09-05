@@ -54,6 +54,11 @@
   <ItemGroup>
     <Compile Include="LoggedInPage.cs" />
     <Compile Include="LoggedOutPage.cs" />
+    <Compile Include="MainArea.cs" />
+    <Compile Include="NewTaskForm.cs" />
+    <Compile Include="SideBar.cs" />
+    <Compile Include="TaskRow.cs" />
+    <Compile Include="ToolBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebBlock.cs" />
   </ItemGroup>

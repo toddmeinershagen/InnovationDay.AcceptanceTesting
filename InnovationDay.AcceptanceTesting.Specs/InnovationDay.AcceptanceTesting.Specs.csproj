@@ -70,17 +70,30 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AddingTasks.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddingTasks.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AddingTasksSteps.cs" />
     <Compile Include="Authentication.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Authentication.feature</DependentUpon>
     </Compile>
     <Compile Include="AuthenticationSteps.cs" />
-    <Compile Include="Infrastructure\LocalFirefox.cs" />
+    <Compile Include="Infrastructure\LocalFirefoxEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="AddingTasks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddingTasks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Authentication.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Authentication.feature.cs</LastGenOutput>

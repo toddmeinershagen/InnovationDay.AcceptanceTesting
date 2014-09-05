@@ -1,4 +1,5 @@
-﻿using Bumblebee.Implementation;
+﻿using System.Collections;
+using Bumblebee.Implementation;
 using Bumblebee.Interfaces;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
@@ -14,6 +15,11 @@ namespace InnovationDay.AcceptanceTesting.Pages
         public LoginArea LoginArea
         {
             get { return new LoginArea(Session); }
+        }
+
+        public IHasText Error
+        {
+           get { return new TextField(this, By.ClassName("formerror")); }
         }
     }
 
@@ -35,9 +41,9 @@ namespace InnovationDay.AcceptanceTesting.Pages
             get { return new TextField<LoginArea>(this, By.Id("password"));}
         }
 
-        public IClickable<LoggedInPage> LoginButton
+        public IClickable Login
         {
-            get { return new Clickable<LoggedInPage>(this, By.ClassName("submit"));}
+            get { return new Clickable(this, By.ClassName("submit"));}
         }
     }
 }
