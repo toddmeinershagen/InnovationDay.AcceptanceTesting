@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnovationDay.AcceptanceTesting.Pages", "InnovationDay.AcceptanceTesting.Pages\InnovationDay.AcceptanceTesting.Pages.csproj", "{10DB7835-3E80-4382-8B1C-1FDD59546DCC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnovationDay.AcceptanceTesting.Specs", "InnovationDay.AcceptanceTesting.Specs\InnovationDay.AcceptanceTesting.Specs.csproj", "{4FFFC1E2-E471-4C37-A73A-16BABF394380}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A6FAAA3F-39F8-4206-9949-103E52606882}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -12,20 +8,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A6FAAA
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.Selenium", "AcceptanceTesting.Selenium\AcceptanceTesting.Selenium.csproj", "{898F66A6-EBCF-49CA-BF07-2511C951BB52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.Common", "AcceptanceTesting.Common\AcceptanceTesting.Common.csproj", "{207BD117-0707-49A4-8349-EB5DA0D8B99F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.Specs", "AcceptanceTesting.Specs\AcceptanceTesting.Specs.csproj", "{61705FAB-7648-40B2-8ACB-771D0A8666AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{10DB7835-3E80-4382-8B1C-1FDD59546DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10DB7835-3E80-4382-8B1C-1FDD59546DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10DB7835-3E80-4382-8B1C-1FDD59546DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10DB7835-3E80-4382-8B1C-1FDD59546DCC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FFFC1E2-E471-4C37-A73A-16BABF394380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FFFC1E2-E471-4C37-A73A-16BABF394380}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FFFC1E2-E471-4C37-A73A-16BABF394380}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FFFC1E2-E471-4C37-A73A-16BABF394380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898F66A6-EBCF-49CA-BF07-2511C951BB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898F66A6-EBCF-49CA-BF07-2511C951BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898F66A6-EBCF-49CA-BF07-2511C951BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898F66A6-EBCF-49CA-BF07-2511C951BB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207BD117-0707-49A4-8349-EB5DA0D8B99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207BD117-0707-49A4-8349-EB5DA0D8B99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207BD117-0707-49A4-8349-EB5DA0D8B99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207BD117-0707-49A4-8349-EB5DA0D8B99F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61705FAB-7648-40B2-8ACB-771D0A8666AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61705FAB-7648-40B2-8ACB-771D0A8666AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61705FAB-7648-40B2-8ACB-771D0A8666AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61705FAB-7648-40B2-8ACB-771D0A8666AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

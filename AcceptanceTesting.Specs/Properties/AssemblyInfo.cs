@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("InnovationDay.AcceptanceTesting.Specs")]
+[assembly: AssemblyTitle("AcceptanceTesting.Specs")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MedAssets")]
-[assembly: AssemblyProduct("InnovationDay.AcceptanceTesting.Specs")]
+[assembly: AssemblyProduct("AcceptanceTesting.Specs")]
 [assembly: AssemblyCopyright("Copyright © MedAssets 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cda5831b-d4ed-4737-9eb5-39028a4b1625")]
+[assembly: Guid("dd803a97-1312-49ce-ba1e-62d1f72dde51")]
 
 // Version information for an assembly consists of the following four values:
 //

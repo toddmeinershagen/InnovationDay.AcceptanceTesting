@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System.Configuration;
+using System.Linq;
+using AcceptanceTesting.Common;
+using AcceptanceTesting.Common.Pages;
+using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Setup;
-using InnovationDay.AcceptanceTesting.Pages;
-using InnovationDay.AcceptanceTesting.Specs.Infrastructure;
 using TechTalk.SpecFlow;
 
-namespace InnovationDay.AcceptanceTesting.Specs
+namespace AcceptanceTesting.Specs
 {
     [Binding]
     public static class Scenario
@@ -43,7 +45,7 @@ namespace InnovationDay.AcceptanceTesting.Specs
 
         public static string ValidPassword
         {
-            get { return "jesusislord"; }
+            get { return ConfigurationManager.AppSettings["encrypted"].Decrypt(); }
         }
 
         public static string InvalidPassword

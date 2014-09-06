@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using Bumblebee.Implementation;
+﻿using Bumblebee.Implementation;
 using Bumblebee.Interfaces;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
 
-namespace InnovationDay.AcceptanceTesting.Pages
+namespace AcceptanceTesting.Common.Pages
 {
     public class LoggedOutPage : WebBlock
     {

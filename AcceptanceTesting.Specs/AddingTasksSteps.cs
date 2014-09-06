@@ -1,10 +1,10 @@
 ﻿using System.Linq;
+using AcceptanceTesting.Common.Pages;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
-using InnovationDay.AcceptanceTesting.Pages;
 using TechTalk.SpecFlow;
 
-namespace InnovationDay.AcceptanceTesting.Specs
+namespace AcceptanceTesting.Specs
 {
     [Binding]
     public class AddingTasksSteps

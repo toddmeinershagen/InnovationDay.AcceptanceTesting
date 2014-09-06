@@ -3,7 +3,7 @@ using Bumblebee.Setup;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace InnovationDay.AcceptanceTesting.Specs.Infrastructure
+namespace AcceptanceTesting.Specs.Infrastructure
 {
     public class LocalFirefoxEnvironment : IDriverEnvironment
     {

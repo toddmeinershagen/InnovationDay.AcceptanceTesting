@@ -4,7 +4,7 @@ using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
 
-namespace InnovationDay.AcceptanceTesting.Pages
+namespace AcceptanceTesting.Common.Pages
 {
     public class MainArea : WebBlock
     {

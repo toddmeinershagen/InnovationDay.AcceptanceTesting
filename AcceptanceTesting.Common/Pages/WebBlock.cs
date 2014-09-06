@@ -5,7 +5,7 @@ using Bumblebee.Setup;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace InnovationDay.AcceptanceTesting.Pages
+namespace AcceptanceTesting.Common.Pages
 {
     public class WebBlock : Block
     {
