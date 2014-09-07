@@ -54,7 +54,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AA\AmericanAirlinesTests.cs" />
+    <Compile Include="AA\DepartureChoicePage.cs" />
+    <Compile Include="AA\FindFlightArea.cs" />
+    <Compile Include="AA\HomePage.cs" />
+    <Compile Include="AA\WebBlock.cs" />
+    <Compile Include="Amazon\WebBlock.cs" />
+    <Compile Include="Amazon\AmazonTests.cs" />
     <Compile Include="Infrastructure\LocalFirefoxEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
