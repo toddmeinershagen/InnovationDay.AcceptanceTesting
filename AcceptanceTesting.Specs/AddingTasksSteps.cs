@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using AcceptanceTesting.Common.Pages;
+using AcceptanceTesting.Specs.Models;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using TechTalk.SpecFlow;
@@ -25,12 +26,6 @@ namespace AcceptanceTesting.Specs
                 .NewTask.Click()
                 .Name.EnterText(taskInfo.Name)
                 .Note.EnterText(taskInfo.Note);
-        }
-
-        public class TaskInfo
-        {
-            public string Name { get; set; }
-            public string Note { get; set; }
         }
 
         [When(@"I save the task")]
