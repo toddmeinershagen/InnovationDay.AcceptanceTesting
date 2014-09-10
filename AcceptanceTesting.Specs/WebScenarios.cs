@@ -9,28 +9,29 @@ using TechTalk.SpecFlow;
 namespace AcceptanceTesting.Specs
 {
     [Binding]
-    public static class Scenario
+    public static class WebScenarios
     {
         [BeforeScenario]
-        public static void before_each()
+        public static void BeforeScenario()
         {
             Threaded<Session>
                 .With<LocalFirefoxEnvironment>()
                 .NavigateTo<LoggedOutPage>("https://www.nirvanahq.com/account/login");
+        }
 
-            if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("autoLogin"))
-            {
-                Threaded<Session>
+        [BeforeScenario("autoLogin")]
+        public static void BeforeAutoLoginScenario()
+        {
+            Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
                 .Username.EnterText(ValidUsername)
                 .Password.EnterText(ValidPassword)
                 .Login.Click<LoggedInPage>();
-            }
         }
 
         [AfterScenario]
-        public static void after_each()
+        public static void AfterScenario()
         {
             Threaded<Session>
                 .End();

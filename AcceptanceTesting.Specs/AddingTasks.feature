@@ -7,12 +7,18 @@
 Scenario: Add a task
 	Given I am logged in
 	And I enter info for a new task
+	| Field | Value                     |
+	| Name  | Test Task                 |
+	| Note  | This is a test task note. |
 	When I save the task
-	Then the task should appear in my list of tasks
+	Then the task with title "Test Task" should appear in my list of tasks
 
 @autoLogin
 Scenario:  Cancel adding a task
 	Given I am logged in
 	And I enter info for a new task
+	| Field | Value                     |
+	| Name  | Test Task                 |
+	| Note  | This is a test task note. |
 	When I cancel the task
-	Then the task should not appear in my list of tasks
+	Then the task with title "Test Task" should not appear in my list of tasks

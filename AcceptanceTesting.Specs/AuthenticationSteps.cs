@@ -14,8 +14,8 @@ namespace AcceptanceTesting.Specs
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
-                .Username.EnterText(Scenario.ValidUsername)
-                .Password.EnterText(Scenario.ValidPassword)
+                .Username.EnterText(WebScenarios.ValidUsername)
+                .Password.EnterText(WebScenarios.ValidPassword)
                 .Login.Click<LoggedInPage>();
         }
 
@@ -25,8 +25,8 @@ namespace AcceptanceTesting.Specs
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
-                .Username.EnterText(Scenario.ValidUsername)
-                .Password.EnterText(Scenario.InvalidPassword)
+                .Username.EnterText(WebScenarios.ValidUsername)
+                .Password.EnterText(WebScenarios.InvalidPassword)
                 .Login.Click<LoggedOutPage>();
         }
         
