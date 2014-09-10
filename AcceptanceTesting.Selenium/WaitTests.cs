@@ -39,7 +39,7 @@ namespace AcceptanceTesting.Selenium
         }
 
         [TestCase(0)]
-        [TestCase(3)]
+        [TestCase(10)]
         public void given_number_of_seconds_when_logging_in_should_be_able_to_find_search_with_explicit_wait(int numberOfSeconds)
         {
             Login(_driver);
