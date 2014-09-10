@@ -10,12 +10,12 @@
 //  </auto-generated>
 // ------------------------------------------------------------------------------
 #region Designer generated code
-
-using TechTalk.SpecFlow;
-
 #pragma warning disable
 namespace AcceptanceTesting.Specs
 {
+    using TechTalk.SpecFlow;
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
@@ -78,7 +78,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("I should be taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be taken to the home page with username \"Todd Meinershagen\" displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -95,7 +95,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
  testRunner.When("I login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.Then("I should be taken to the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be taken to the login page with title \"Nirvana › Signin\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.And("error message with \"incorrect password, please try again\" text should be displaye" +
+                    "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

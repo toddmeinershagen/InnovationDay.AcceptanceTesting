@@ -1,4 +1,5 @@
 ﻿using AcceptanceTesting.Common.Pages;
+using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using TechTalk.SpecFlow;
@@ -8,48 +9,60 @@ namespace AcceptanceTesting.Specs
     [Binding]
     public class AuthenticationSteps
     {
-        [Given]
-        public void Given_I_enter_a_valid_username_and_password()
+        private readonly Settings _settings = new Settings();
+
+        [Given(@"I enter a valid username and password")]
+        public void GivenIEnterAValidUsernameAndPassword()
         {
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
-                .Username.EnterText(WebScenarios.ValidUsername)
-                .Password.EnterText(WebScenarios.ValidPassword)
+                .Username.EnterText(_settings.ValidUserName)
+                .Password.EnterText(_settings.ValidPassword)
                 .Login.Click<LoggedInPage>();
         }
 
-        [Given]
-        public void Given_I_enter_a_invalid_username_and_password()
+        [When(@"I login")]
+        public void WhenILogin()
+        {}
+
+        [Given(@"I enter a invalid username and password")]
+        public void GivenIEnterAInvalidUsernameAndPassword()
         {
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
-                .Username.EnterText(WebScenarios.ValidUsername)
-                .Password.EnterText(WebScenarios.InvalidPassword)
+                .Username.EnterText(_settings.ValidUserName)
+                .Password.EnterText("jjjjjj")
                 .Login.Click<LoggedOutPage>();
         }
-        
-        [When]
-        public void When_I_login()
-        {
-        }
-        
-        [Then]
-        public void Then_I_should_be_taken_to_the_home_page()
+
+        [Then(@"I should be taken to the home page with username ""(.*)"" displayed")]
+        public void ThenIShouldBeTakenToTheHomePageWithUsernameDisplayed(string username)
         {
             Threaded<Session>
                 .CurrentBlock<LoggedInPage>()
                 .ToolBar
-                .Verify(t => t.Account.Text == "Todd Meinershagen");
+                .Verify(t => t.Account.Text == username);
         }
 
-        [Then]
-        public void Then_I_should_be_taken_to_the_login_page()
+
+        [Then(@"I should be taken to the login page with title ""(.*)""")]
+        public void ThenIShouldBeTakenToTheLoginPageWithTitle(string title)
         {
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
-                .Verify(x => x.Error.Text == "incorrect password, please try again");
+                .Verify(x => x.Session.Driver.Title == title);
         }
+
+
+        [Then(@"error message with ""(.*)"" text should be displayed")]
+        public void ThenErrorMessageWithTextShouldBeDisplayed(string errorText)
+        {
+            Threaded<Session>
+                .CurrentBlock<LoggedOutPage>()
+                .Verify(x => x.Error.Text == errorText);
+        }
+
     }
 }
