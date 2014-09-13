@@ -1,0 +1,42 @@
+***** AcceptanceTesting.Specs.AddingTasksFeature.AddATask
+Given I am logged in
+-> done: AddingTasksSteps.GivenIAmLoggedIn() (0.0s)
+And I enter info for a new task
+  --- table step argument ---
+  | Field | Value                     |
+  | Name  | Test Task                 |
+  | Note  | This is a test task note. |
+-> done: AddingTasksSteps.GivenIEnterInfoForANewTask(<table>) (1.9s)
+When I save the task
+-> done: AddingTasksSteps.WhenISaveTheTask() (1.2s)
+Then the task with title "Test Task" should appear in my list of tasks
+-> done: AddingTasksSteps.ThenTheTaskWithTitleShouldAppearInMyListOfTasks("Test Task") (1.4s)
+***** AcceptanceTesting.Specs.AddingTasksFeature.CancelAddingATask
+Given I am logged in
+-> done: AddingTasksSteps.GivenIAmLoggedIn() (0.0s)
+And I enter info for a new task
+  --- table step argument ---
+  | Field | Value                     |
+  | Name  | Test Task                 |
+  | Note  | This is a test task note. |
+-> done: AddingTasksSteps.GivenIEnterInfoForANewTask(<table>) (1.8s)
+When I cancel the task
+-> done: AddingTasksSteps.WhenICancelTheTask() (1.0s)
+Then the task with title "Test Task" should not appear in my list of tasks
+-> done: AddingTasksSteps.ThenTheTaskWithTitleShouldNotAppearInMyListOfTasks("Test Task") (0.4s)
+***** AcceptanceTesting.Specs.AuthenticationFeature.LoginWithInvalidUsernameAndPassword
+Given I enter a invalid username and password
+-> done: AuthenticationSteps.GivenIEnterAInvalidUsernameAndPassword() (1.6s)
+When I login
+-> done: AuthenticationSteps.WhenILogin() (0.0s)
+Then I should be taken to the login page with title "Nirvana › Signin"
+-> done: AuthenticationSteps.ThenIShouldBeTakenToTheLoginPageWithTitle("Nirvana › Signin") (0.2s)
+And error message with "incorrect password, please try again" text should be displayed
+-> done: AuthenticationSteps.ThenErrorMessageWithTextShouldBeDisplayed("incorrect passwor...") (0.3s)
+***** AcceptanceTesting.Specs.AuthenticationFeature.LoginWithValidUsernameAndPassword
+Given I enter a valid username and password
+-> done: AuthenticationSteps.GivenIEnterAValidUsernameAndPassword() (5.0s)
+When I login
+-> done: AuthenticationSteps.WhenILogin() (0.0s)
+Then I should be taken to the home page with username "Todd Meinershagen" displayed
+-> done: AuthenticationSteps.ThenIShouldBeTakenToTheHomePageWithUsernameDisplayed("Todd Meinershagen") (0.5s)
