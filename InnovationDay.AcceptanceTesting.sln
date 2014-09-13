@@ -6,6 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A6FAAA
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+		RunSpecFlow.bat = RunSpecFlow.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.Selenium", "AcceptanceTesting.Selenium\AcceptanceTesting.Selenium.csproj", "{898F66A6-EBCF-49CA-BF07-2511C951BB52}"

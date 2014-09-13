@@ -73,7 +73,6 @@
     </Compile>
     <Compile Include="AuthenticationSteps.cs" />
     <Compile Include="Infrastructure\LocalFirefoxEnvironment.cs" />
-    <Compile Include="Infrastructure\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\TaskInfo.cs" />
     <Compile Include="WebScenarios.cs" />

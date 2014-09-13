@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddingTasksTest.cs" />
     <Compile Include="FindingElementTests.cs" />
     <Compile Include="WaitTests.cs" />
     <Compile Include="WebDriverTests.cs" />

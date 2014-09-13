@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Configuration;
-using AcceptanceTesting.Common;
+using AcceptanceTesting.Specs.Infrastructure;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -12,7 +11,7 @@ namespace AcceptanceTesting.Selenium
     public class WaitTests
     {
         private IWebDriver _driver;
-        private readonly string _password = ConfigurationManager.AppSettings["encrypted"].Decrypt();
+        private readonly Settings _settings = new Settings();
 
         [SetUp]
         public void before_each()
@@ -56,11 +55,11 @@ namespace AcceptanceTesting.Selenium
                         
             var username = driver.FindElement(By.Id("username"));
             username.Clear();
-            username.SendKeys("todd@meinershagen.net");
+            username.SendKeys(_settings.ValidUserName);
 
             var password = driver.FindElement(By.Id("password"));
             password.Clear();
-            password.SendKeys(_password);
+            password.SendKeys(_settings.ValidPassword);
 
             var submit = driver.FindElement(By.ClassName("submit"));
             submit.Click();
