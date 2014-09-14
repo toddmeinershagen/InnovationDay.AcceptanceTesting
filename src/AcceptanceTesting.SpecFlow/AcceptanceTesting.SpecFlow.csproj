@@ -53,6 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataExamples.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataExamples.feature</DependentUpon>
+    </Compile>
+    <Compile Include="DataExamplesSteps.cs" />
     <Compile Include="DataLess.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DataExamples.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataExamples.feature.cs</LastGenOutput>
+    </None>
     <None Include="DataLess.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataLess.feature.cs</LastGenOutput>
