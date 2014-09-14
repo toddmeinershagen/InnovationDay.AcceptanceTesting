@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using AcceptanceTesting.Common;
 using AcceptanceTesting.Specs.Infrastructure;
 using NUnit.Framework;
 using OpenQA.Selenium;

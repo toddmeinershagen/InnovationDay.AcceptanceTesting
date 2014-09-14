@@ -1,4 +1,5 @@
-﻿using AcceptanceTesting.Bumblebee.Infrastructure;
+﻿using System;
+using AcceptanceTesting.Bumblebee.Infrastructure;
 using Bumblebee.Setup;
 using NUnit.Framework;
 
@@ -15,9 +16,9 @@ namespace AcceptanceTesting.Bumblebee.AA
                 .NavigateTo<HomePage>("https://www.aa.com/homePage.do")
                 .FindFlightArea
                 .From.EnterText("DFW")
-                .LeavingOn.EnterText("12/01/2014")
+                .LeavingOn.EnterText(DateTime.Now.AddDays(30).ToShortDateString())
                 .To.EnterText("LAS")
-                .ReturningFrom.EnterText("12/08/2014")
+                .ReturningFrom.EnterText(DateTime.Now.AddDays(37).ToShortDateString())
                 .Search.Click<DepartureChoicePage>()
                 .Session.End();
         }

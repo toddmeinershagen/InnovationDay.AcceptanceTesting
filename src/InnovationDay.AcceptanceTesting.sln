@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		RunSpecFlow.bat = RunSpecFlow.bat
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.SpecFlow", "AcceptanceTesting.SpecFlow\AcceptanceTesting.SpecFlow.csproj", "{DA08F264-4034-40E1-B0D6-AA5C1390D884}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Detail", "Detail", "{320711A0-9DE4-4D5F-8477-9A036E7B6034}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,8 +48,17 @@ Global
 		{49D7CC76-14AA-4D28-A2C5-E82DB3B47894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49D7CC76-14AA-4D28-A2C5-E82DB3B47894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49D7CC76-14AA-4D28-A2C5-E82DB3B47894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA08F264-4034-40E1-B0D6-AA5C1390D884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA08F264-4034-40E1-B0D6-AA5C1390D884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA08F264-4034-40E1-B0D6-AA5C1390D884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA08F264-4034-40E1-B0D6-AA5C1390D884}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49D7CC76-14AA-4D28-A2C5-E82DB3B47894} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
+		{DA08F264-4034-40E1-B0D6-AA5C1390D884} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
+		{898F66A6-EBCF-49CA-BF07-2511C951BB52} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
 	EndGlobalSection
 EndGlobal
