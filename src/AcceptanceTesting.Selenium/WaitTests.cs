@@ -1,5 +1,6 @@
 ﻿using System;
 using AcceptanceTesting.Specs.Infrastructure;
+using FluentAssertions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -25,28 +26,53 @@ namespace AcceptanceTesting.Selenium
             _driver.Dispose();
         }
 
-        [TestCase(0)]
-        [TestCase(3)]
-        public void given_number_of_seconds_when_logging_in_should_be_able_to_find_search_with_implicit_wait(int numberOfSeconds)
+        [TestCase(0, true)]
+        [TestCase(3, false)]
+        public void given_number_of_seconds_when_searching_with_implicit_wait_should_demonstrate_expected_timeout(int numberOfSeconds, bool shouldTimeout)
         {
             _driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(numberOfSeconds));
             Login(_driver);
 
-            var search = _driver.FindElement(By.Name("q"));
-            search.Clear();
-            search.SendKeys("test");
+            Action action = () =>
+            {
+                var search = _driver.FindElement(By.Name("q"));
+                search.Clear();
+                search.SendKeys("test");
+            };
+
+            if (shouldTimeout)
+            {
+                action.ShouldThrow<NoSuchElementException>();
+            }
+            else
+            {
+                action.ShouldNotThrow();
+            }
         }
 
-        [TestCase(0)]
-        [TestCase(10)]
-        public void given_number_of_seconds_when_logging_in_should_be_able_to_find_search_with_explicit_wait(int numberOfSeconds)
+        [TestCase(0, true)]
+        [TestCase(10, false)]
+        public void given_number_of_seconds_when_searching_with_explicit_wait_should_demonstrate_expected_timeout(int numberOfSeconds, bool shouldTimeout)
         {
             Login(_driver);
 
             var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(numberOfSeconds));
-            var search = wait.Until(d => d.FindElement(By.Name("q")));
-            search.Clear();
-            search.SendKeys("test");
+
+            Action action = () =>
+            {
+                var search = wait.Until(d => d.FindElement(By.Name("q")));
+                search.Clear();
+                search.SendKeys("test");
+            };
+
+            if (shouldTimeout)
+            {
+                action.ShouldThrow<WebDriverTimeoutException>();
+            }
+            else
+            {
+                action.ShouldNotThrow();
+            }
         }
 
         private void Login(IWebDriver driver)
