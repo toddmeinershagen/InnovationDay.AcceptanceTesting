@@ -1,16 +1,21 @@
 ﻿using System;
+using System.IO;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 
 namespace AcceptanceTesting.Performance.Infrastructure
 {
-    public class LocalFirefoxEnvironment : IDriverEnvironment
+    public class LocalChromeEnvironment : IDriverEnvironment
     {
         public IWebDriver CreateWebDriver()
         {
-            var binary = new FirefoxBinary(@"C:\Program Files (x86)\Mozilla Firefox\firefox.exe");
-            var driver = new FirefoxDriver(binary, new FirefoxProfile());
+            var options = new ChromeOptions();
+            options.AddArgument("test-type");
+            var driver = new ChromeDriver(options);
+
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
             return driver;

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using AcceptanceTesting.Common.Pages;
 using AcceptanceTesting.Performance.Infrastructure;
@@ -9,6 +11,7 @@ using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium.Firefox;
 
 namespace AcceptanceTesting.Performance
 {
@@ -62,34 +65,39 @@ namespace AcceptanceTesting.Performance
 
         [TestInitialize]
         public void SetUp()
-        {  
+        {
+            Threaded<Session>
+                .With<LocalChromeEnvironment>()
+                .NavigateTo<LoggedOutPage>(_settings.BaseUrl);
         }
 
         [TestCleanup]
         public void TearDown()
         {
+            Threaded<Session>
+                .End();
         }
 
         [TestMethod]
+        [DeploymentItem("chromedriver.exe")]
         public void AddingATask()
         {
-            Action action = () =>
-            {
-                //var taskInfo = new {Name = "Task_" + Guid.NewGuid(), Note = "Note for task."};
+            var taskInfo = new {Name = "Task_" + Guid.NewGuid(), Note = "Note for task."};
 
-                Threaded<Session>
-                    .With<LocalFirefoxEnvironment>()
-                    .NavigateTo<LoggedOutPage>(_settings.BaseUrl)
-                    .LoginArea
-                    .Username.EnterText(_settings.ValidUserName)
-                    .Password.EnterText(_settings.ValidPassword)
-                    .Login.Click<LoggedInPage>();
-
-                Threaded<Session>
-                    .End();
-            };
-
-            action();
+            Threaded<Session>
+                .CurrentBlock<LoggedOutPage>()
+                .LoginArea
+                .Username.EnterText(_settings.ValidUserName)
+                .Password.EnterText(_settings.ValidPassword)
+                .Login.Click<LoggedInPage>()
+                .ToolBar
+                .NewTask.Click()
+                .Name.EnterText(taskInfo.Name)
+                .Note.EnterText(taskInfo.Note)
+                .Save.Click()
+                .TaskRows.First(row => row.Name.Text == taskInfo.Name)
+                .Verify("that row should exist", row => row != null)
+                .Delete();
         }
     }
 }

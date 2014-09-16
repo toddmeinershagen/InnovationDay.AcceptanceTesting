@@ -1,4 +1,5 @@
-﻿using Bumblebee.Implementation;
+﻿using Bumblebee.Extensions;
+using Bumblebee.Implementation;
 using Bumblebee.Interfaces;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
@@ -29,6 +30,9 @@ namespace AcceptanceTesting.Common.Pages
             var drop = new SideBar(Session).Trash;
             GetDragAndDropPerformer()
                 .DragAndDrop(drag, drop);
+
+            Session.Pause(200);
+
         }
     }
 }
