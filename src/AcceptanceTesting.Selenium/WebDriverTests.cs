@@ -8,24 +8,30 @@ using OpenQA.Selenium.PhantomJS;
 
 namespace AcceptanceTesting.Selenium
 {
-    [TestFixture]
-    public class WebDriverTests
+    [TestFixture(typeof (FirefoxDriver))]
+    [TestFixture(typeof(InternetExplorerDriver))]
+    [TestFixture(typeof (PhantomJSDriver))]
+    public class given_a_web_driver<TDriver> where TDriver : IWebDriver, new()
     {
-        [TestCase(typeof(FirefoxDriver))]
-        [TestCase(typeof(PhantomJSDriver))]
-        [TestCase(typeof(InternetExplorerDriver))]
-        public void given_driver_type_when_navigating_to_google_should_load_page(Type typeOfDriver)
+        private IWebDriver _driver;
+
+        [TestFixtureSetUp]
+        public void before()
         {
-            using (IWebDriver driver = GetDriver(typeOfDriver))
-            {
-                driver.Navigate().GoToUrl("http://www.google.com");
-                driver.PageSource.Should().Contain("Google Search");
-            }
+            _driver = new TDriver();
         }
 
-        public IWebDriver GetDriver(Type typeOfDriver)
+        [TestFixtureTearDown]
+        public void after()
         {
-           return  Activator.CreateInstance(typeOfDriver) as IWebDriver;
+            _driver.Dispose();
+        }
+
+        [Test]
+        public void when_navigating_to_google_should_load_page()
+        {
+            _driver.Navigate().GoToUrl("http://www.google.com");
+            _driver.PageSource.Should().Contain("Google Search");
         }
     }
 }
