@@ -65,23 +65,15 @@ namespace AcceptanceTesting.Specs
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 7
-#line 8
- testRunner.Given("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add a task")]
-        public virtual void AddATask()
+        [NUnit.Framework.DescriptionAttribute("Adding a task")]
+        public virtual void AddingATask()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a task", ((string[])(null)));
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding a task", ((string[])(null)));
+#line 8
 this.ScenarioSetup(scenarioInfo);
-#line 7
-this.FeatureBackground();
+#line 9
+ testRunner.Given("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -92,43 +84,12 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Note",
                         "This is a test task note."});
-#line 11
- testRunner.Given("I enter info for a new task", ((string)(null)), table1, "Given ");
-#line 15
+#line 10
+ testRunner.And("I enter info for a new task", ((string)(null)), table1, "And ");
+#line 14
  testRunner.When("I save the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 15
  testRunner.Then("the task with title \"Test Task\" should appear in my list of tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cancel adding a task")]
-        [NUnit.Framework.IgnoreAttribute()]
-        public virtual void CancelAddingATask()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel adding a task", new string[] {
-                        "ignore"});
-#line 19
-this.ScenarioSetup(scenarioInfo);
-#line 7
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table2.AddRow(new string[] {
-                        "Name",
-                        "Test Task"});
-            table2.AddRow(new string[] {
-                        "Note",
-                        "This is a test task note."});
-#line 20
- testRunner.Given("I enter info for a new task", ((string)(null)), table2, "Given ");
-#line 24
- testRunner.When("I cancel the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
- testRunner.Then("the task with title \"Test Task\" should not appear in my list of tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

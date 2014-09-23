@@ -55,23 +55,6 @@ namespace AcceptanceTesting.Specs
                  .Save.Click();
         }
 
-        [When(@"I cancel the task")]
-        public void WhenICancelTheTask()
-        {
-            Threaded<Session>
-                .CurrentBlock<NewTaskForm>()
-                .Cancel.Click();
-        }
-
-        [Then(@"the task with title ""(.*)"" should not appear in my list of tasks")]
-        public void ThenTheTaskWithTitleShouldNotAppearInMyListOfTasks(string name)
-        {
-            Threaded<Session>
-                .CurrentBlock<MainArea>()
-                .TaskRows.FirstOrDefault(row => row.Name.Text == name)
-                .Verify("that row should not exist", row => row == null);
-        }
-
         [Then(@"the task with title ""(.*)"" should appear in my list of tasks")]
         public void ThenTheTaskWithTitleShouldAppearInMyListOfTasks(string name)
         {
