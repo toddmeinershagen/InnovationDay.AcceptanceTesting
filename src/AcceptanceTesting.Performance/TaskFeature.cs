@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using AcceptanceTesting.Common.Pages;
+using AcceptanceTesting.Common.Blocks;
 using AcceptanceTesting.Performance.Infrastructure;
 using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium.Firefox;
 
 namespace AcceptanceTesting.Performance
 {

@@ -55,53 +55,93 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataExamples.feature.cs">
+    <Compile Include="HookSamples\AllHooksSteps.cs" />
+    <Compile Include="DataSamples\DataExamples.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataExamples.feature</DependentUpon>
     </Compile>
-    <Compile Include="DataExamplesSteps.cs" />
-    <Compile Include="DataLess.feature.cs">
+    <Compile Include="DataSamples\DataExamplesSteps.cs" />
+    <Compile Include="DataSamples\DataLess.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataLess.feature</DependentUpon>
     </Compile>
-    <Compile Include="DataLessFeatureSteps.cs" />
-    <Compile Include="DataTable.feature.cs">
+    <Compile Include="DataSamples\DataLessFeatureSteps.cs" />
+    <Compile Include="HookSamples\AllHooks.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataTable.feature</DependentUpon>
+      <DependentUpon>AllHooks.feature</DependentUpon>
     </Compile>
-    <Compile Include="DataTableSteps.cs" />
+    <Compile Include="DataSamples\HorizontalDataTable.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HorizontalDataTable.feature</DependentUpon>
+    </Compile>
+    <Compile Include="DataSamples\HorizontalDataTableSteps.cs" />
+    <Compile Include="DataSamples\Transformations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Transformations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="DataSamples\TransformationsSteps.cs" />
+    <Compile Include="HookSamples\AllHooks2.feature.cs">
+      <DependentUpon>AllHooks2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="VerticalDataTableSteps.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleData.feature.cs">
+    <Compile Include="DataSamples\SimpleData.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SimpleData.feature</DependentUpon>
     </Compile>
-    <Compile Include="SimpleDataFeatureSteps.cs" />
+    <Compile Include="DataSamples\SimpleDataFeatureSteps.cs" />
+    <Compile Include="DataSamples\VerticalDataTable.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerticalDataTable.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DataExamples.feature">
+    <None Include="DataSamples\DataExamples.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataExamples.feature.cs</LastGenOutput>
     </None>
-    <None Include="DataLess.feature">
+    <None Include="DataSamples\DataLess.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataLess.feature.cs</LastGenOutput>
     </None>
-    <None Include="DataTable.feature">
+    <None Include="HookSamples\AllHooks.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DataTable.feature.cs</LastGenOutput>
+      <LastGenOutput>AllHooks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="DataSamples\HorizontalDataTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HorizontalDataTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="HookSamples\AllHooks2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AllHooks2.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="SimpleData.feature">
+    <None Include="DataSamples\SimpleData.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SimpleData.feature.cs</LastGenOutput>
     </None>
+    <None Include="DataSamples\Transformations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Transformations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="DataSamples\VerticalDataTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>VerticalDataTable.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

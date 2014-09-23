@@ -1,3 +1,4 @@
+using AcceptanceTesting.Common.Blocks;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using OpenQA.Selenium;

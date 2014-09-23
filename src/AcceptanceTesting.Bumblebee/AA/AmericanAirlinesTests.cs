@@ -1,5 +1,5 @@
 ﻿using System;
-using AcceptanceTesting.Bumblebee.Infrastructure;
+using AcceptanceTesting.Common.Infrastructure;
 using Bumblebee.Setup;
 using NUnit.Framework;
 

@@ -1,3 +1,4 @@
+using AcceptanceTesting.Common.Blocks;
 using Bumblebee.Implementation;
 using Bumblebee.Interfaces;
 using Bumblebee.Setup;

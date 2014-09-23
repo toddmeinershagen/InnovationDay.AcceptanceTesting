@@ -1,4 +1,5 @@
-﻿using AcceptanceTesting.Common.Pages;
+﻿using AcceptanceTesting.Common.Blocks;
+using AcceptanceTesting.Common.Infrastructure;
 using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Setup;
 using TechTalk.SpecFlow;
@@ -6,31 +7,31 @@ using TechTalk.SpecFlow;
 namespace AcceptanceTesting.Specs
 {
     [Binding]
-    public static class WebScenarios
+    public class WebScenarios
     {
-        private static readonly Settings Settings = new Settings();
+        private readonly Settings _settings = new Settings();
 
-        [BeforeScenario]
-        public static void BeforeScenario()
+        [BeforeScenario("autoLogin")]
+        public void BeforeScenario()
         {
             Threaded<Session>
                 .With<LocalFirefoxEnvironment>()
-                .NavigateTo<LoggedOutPage>(Settings.BaseUrl);
+                .NavigateTo<LoggedOutPage>(_settings.BaseUrl);
         }
 
         [BeforeScenario("autoLogin")]
-        public static void BeforeAutoLoginScenario()
+        public void BeforeAutoLoginScenario()
         {
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
                 .LoginArea
-                .Username.EnterText(Settings.ValidUserName)
-                .Password.EnterText(Settings.ValidPassword)
+                .Username.EnterText(_settings.ValidUserName)
+                .Password.EnterText(_settings.ValidPassword)
                 .Login.Click<LoggedInPage>();
         }
 
-        [AfterScenario]
-        public static void AfterScenario()
+        [AfterScenario("autoLogin")]
+        public void AfterScenario()
         {
             Threaded<Session>
                 .End();

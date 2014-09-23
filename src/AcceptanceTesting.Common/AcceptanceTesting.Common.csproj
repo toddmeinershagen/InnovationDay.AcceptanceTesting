@@ -54,14 +54,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\LoggedInPage.cs" />
-    <Compile Include="Pages\LoggedOutPage.cs" />
-    <Compile Include="Pages\MainArea.cs" />
-    <Compile Include="Pages\NewTaskForm.cs" />
-    <Compile Include="Pages\SideBar.cs" />
-    <Compile Include="Pages\TaskRow.cs" />
-    <Compile Include="Pages\ToolBar.cs" />
-    <Compile Include="Pages\WebBlock.cs" />
+    <Compile Include="Blocks\LoggedInPage.cs" />
+    <Compile Include="Blocks\LoggedOutPage.cs" />
+    <Compile Include="Blocks\MainArea.cs" />
+    <Compile Include="Blocks\NewTaskForm.cs" />
+    <Compile Include="Blocks\SideBar.cs" />
+    <Compile Include="Blocks\TaskRow.cs" />
+    <Compile Include="Blocks\ToolBar.cs" />
+    <Compile Include="Blocks\WebBlock.cs" />
+    <Compile Include="Infrastructure\LocalIeEnvironment.cs" />
+    <Compile Include="Infrastructure\LocalChromeEnvironment.cs" />
+    <Compile Include="Infrastructure\LocalFirefoxEnvironment.cs" />
+    <Compile Include="Infrastructure\LocalPhantomJsEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="StringExtensions.cs" />

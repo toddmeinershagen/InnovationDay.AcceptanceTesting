@@ -1,3 +1,4 @@
+using AcceptanceTesting.Common.Blocks;
 using Bumblebee.Setup;
 
 namespace AcceptanceTesting.Bumblebee.AA

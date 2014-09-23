@@ -1,5 +1,7 @@
 ﻿using System.Linq;
-using AcceptanceTesting.Common.Pages;
+using AcceptanceTesting.Common.Blocks;
+using AcceptanceTesting.Common.Infrastructure;
+using AcceptanceTesting.Specs.Infrastructure;
 using AcceptanceTesting.Specs.Models;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
@@ -11,9 +13,26 @@ namespace AcceptanceTesting.Specs
     [Binding]
     public class AddingTasksSteps
     {
+        private readonly Settings _settings = new Settings();
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            Threaded<Session>
+                .End();
+        }
+
         [Given(@"I am logged in")]
         public void GivenIAmLoggedIn()
-        {}
+        {
+            Threaded<Session>
+                .With<LocalFirefoxEnvironment>()
+                .NavigateTo<LoggedOutPage>(_settings.BaseUrl)
+                .LoginArea
+                .Username.EnterText(_settings.ValidUserName)
+                .Password.EnterText(_settings.ValidPassword)
+                .Login.Click<LoggedInPage>();
+        }
 
         [Given(@"I enter info for a new task")]
         public void GivenIEnterInfoForANewTask(Table table)

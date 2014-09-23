@@ -65,17 +65,23 @@ namespace AcceptanceTesting.Specs
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add a task")]
-        [NUnit.Framework.CategoryAttribute("autoLogin")]
-        public virtual void AddATask()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a task", new string[] {
-                        "autoLogin"});
 #line 7
-this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add a task")]
+        public virtual void AddATask()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a task", ((string[])(null)));
+#line 10
+this.ScenarioSetup(scenarioInfo);
+#line 7
+this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -86,11 +92,11 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "Note",
                         "This is a test task note."});
-#line 9
- testRunner.And("I enter info for a new task", ((string)(null)), table1, "And ");
-#line 13
+#line 11
+ testRunner.Given("I enter info for a new task", ((string)(null)), table1, "Given ");
+#line 15
  testRunner.When("I save the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 16
  testRunner.Then("the task with title \"Test Task\" should appear in my list of tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -98,15 +104,13 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cancel adding a task")]
-        [NUnit.Framework.CategoryAttribute("autoLogin")]
         public virtual void CancelAddingATask()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel adding a task", new string[] {
-                        "autoLogin"});
-#line 17
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel adding a task", ((string[])(null)));
 #line 18
- testRunner.Given("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
+#line 7
+this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -118,7 +122,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Note",
                         "This is a test task note."});
 #line 19
- testRunner.And("I enter info for a new task", ((string)(null)), table2, "And ");
+ testRunner.Given("I enter info for a new task", ((string)(null)), table2, "Given ");
 #line 23
  testRunner.When("I cancel the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
