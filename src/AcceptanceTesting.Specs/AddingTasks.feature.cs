@@ -104,10 +104,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cancel adding a task")]
+        [NUnit.Framework.IgnoreAttribute()]
         public virtual void CancelAddingATask()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel adding a task", ((string[])(null)));
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel adding a task", new string[] {
+                        "ignore"});
+#line 19
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
@@ -121,11 +123,11 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Note",
                         "This is a test task note."});
-#line 19
+#line 20
  testRunner.Given("I enter info for a new task", ((string)(null)), table2, "Given ");
-#line 23
- testRunner.When("I cancel the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+ testRunner.When("I cancel the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
  testRunner.Then("the task with title \"Test Task\" should not appear in my list of tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

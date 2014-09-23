@@ -15,6 +15,7 @@ Scenario: Add a task
 	When I save the task
 	Then the task with title "Test Task" should appear in my list of tasks
 
+@ignore
 Scenario:  Cancel adding a task
 	Given I enter info for a new task
 	| Field | Value                     |
