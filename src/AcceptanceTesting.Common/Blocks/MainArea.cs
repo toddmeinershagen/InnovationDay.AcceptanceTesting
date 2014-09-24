@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Bumblebee.Extensions;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
 
@@ -13,15 +12,10 @@ namespace AcceptanceTesting.Common.Blocks
             Tag = GetElement(By.Id("main"));
         }
 
-        public IEnumerable<TaskRow> TaskRows
+        public IEnumerable<TaskList> TaskLists
         {
-            get
-            {
-                return GetElement(By.ClassName("tasks"))
-                    .GetElements(By.ClassName("task"))
-                    .Select(tag => new TaskRow(Session, tag));
-            }
+            get { return GetElements(By.ClassName("tasklist"))
+                .Select(x => new TaskList(Session, x)); }
         }
-        
     }
 }

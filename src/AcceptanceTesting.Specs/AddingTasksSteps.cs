@@ -59,6 +59,7 @@ namespace AcceptanceTesting.Specs
         {
             Threaded<Session>
                 .CurrentBlock<MainArea>()
+                .TaskLists.First(list => list.Name.Text == "Standalone Actions")
                 .TaskRows.First(row => row.Name.Text == name)
                 .Verify("that row should exist", row => row != null)
                 .Delete();

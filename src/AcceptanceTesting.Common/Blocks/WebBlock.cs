@@ -14,7 +14,7 @@ namespace AcceptanceTesting.Common.Blocks
         public WebBlock(Session session) : base(session)
         {
             this.Pause(200);
-            Wait = new WebDriverWait(Session.Driver, TimeSpan.FromSeconds(3));
+            Wait = new WebDriverWait(Session.Driver, TimeSpan.FromSeconds(60));
             Tag = Wait.Until(driver => driver.GetElement(By.TagName("body")));
         }
     }

@@ -59,6 +59,7 @@
     <Compile Include="Blocks\MainArea.cs" />
     <Compile Include="Blocks\NewTaskForm.cs" />
     <Compile Include="Blocks\SideBar.cs" />
+    <Compile Include="Blocks\TaskList.cs" />
     <Compile Include="Blocks\TaskRow.cs" />
     <Compile Include="Blocks\ToolBar.cs" />
     <Compile Include="Blocks\WebBlock.cs" />

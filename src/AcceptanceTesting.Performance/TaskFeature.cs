@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AcceptanceTesting.Common.Blocks;
 using AcceptanceTesting.Performance.Infrastructure;
@@ -88,6 +89,7 @@ namespace AcceptanceTesting.Performance
                 .Name.EnterText(taskInfo.Name)
                 .Note.EnterText(taskInfo.Note)
                 .Save.Click()
+                .TaskLists.First(list => list.Name.Text == "Standalone Actions")
                 .TaskRows.First(row => row.Name.Text == taskInfo.Name)
                 .Verify("that row should exist", row => row != null)
                 .Delete();
