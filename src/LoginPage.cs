@@ -13,14 +13,14 @@ namespace AcceptanceTesting.Demo.Blocks
             Tag = session.Driver.GetElement(By.TagName("body"));
         }
 
-        public ITextField<LoggedOutPage> Username
+        public ITextField<LoginPage> Username
         {
-            get { return new TextField<LoggedOutPage>(this, By.Id("username"));}
+            get { return new TextField<LoginPage>(this, By.Id("username")); }
         }
 
-        public ITextField<LoggedOutPage> Password
+        public ITextField<LoginPage> Password
         {
-            get { return new TextField<LoggedOutPage>(this, By.Id("password"));}
+            get { return new TextField<LoginPage>(this, By.Id("password")); }
         }
 
         public IClickable<MainPage> Login
