@@ -19,16 +19,22 @@ install-package specflow.nunit
 install-package bumblebee.automation
 reference Common for driver environments
 
-	public class WebBlock : Block
-    {
-        public WebBlock(Session session)
-            : base(session)
-        {
-            this.Pause(200);
-            var wait = new WebDriverWait(Session.Driver, TimeSpan.FromSeconds(3));
-            Tag = wait.Until(driver => driver.GetElement(By.TagName("body")));
-        }
-    }
+IWebDriver driver = new FirefoxDriver();
+driver.Manage().Window.Maximize();
+driver.Manage().Timeout.ImplicitlyWait(TimeSpan.FromSeconds(3));
+driver.Navigate().GoToUrl("https://www.nirvanahq.com/account/login");
+
+var username = driver.FindElement(By.Id("username"));
+var password = driver.FindElement(By.Id("password"));
+var login = driver.FindElement(By.ClassName("submit"));
+
+username.Clear();
+username.SendKeys(credentials.Username);
+
+password.Clear();
+password.SendKeys(credentials.EncryptedPassword.Decrypt());
+
+login.Click();
 
 https://www.nirvanahq.com/account/login
 
