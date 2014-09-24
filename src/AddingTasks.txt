@@ -21,7 +21,7 @@ reference Common for driver environments
 
 IWebDriver driver = new FirefoxDriver();
 driver.Manage().Window.Maximize();
-driver.Manage().Timeout.ImplicitlyWait(TimeSpan.FromSeconds(3));
+driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
 driver.Navigate().GoToUrl("https://www.nirvanahq.com/account/login");
 
 var username = driver.FindElement(By.Id("username"));
