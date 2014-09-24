@@ -11,38 +11,24 @@ namespace AcceptanceTesting.Common.Blocks
             : base(session)
         {}
 
-        public LoginArea LoginArea
+        public ITextField<LoggedOutPage> Username
         {
-            get { return new LoginArea(Session); }
+            get { return new TextField<LoggedOutPage>(this, By.Id("username")); }
+        }
+
+        public ITextField<LoggedOutPage> Password
+        {
+            get { return new TextField<LoggedOutPage>(this, By.Id("password")); }
+        }
+
+        public IClickable Login
+        {
+            get { return new Clickable(this, By.ClassName("submit")); }
         }
 
         public IHasText Error
         {
            get { return new TextField(this, By.ClassName("formerror")); }
-        }
-    }
-
-    public class LoginArea : WebBlock
-    {
-        public LoginArea(Session session)
-            : base(session)
-        {
-            Tag = GetElement(By.Id("login"));
-        }
-
-        public ITextField<LoginArea> Username
-        {
-            get { return new TextField<LoginArea>(this, By.Id("username")); }
-        }
-
-        public ITextField<LoginArea> Password
-        {
-            get { return new TextField<LoginArea>(this, By.Id("password"));}
-        }
-
-        public IClickable Login
-        {
-            get { return new Clickable(this, By.ClassName("submit"));}
         }
     }
 }

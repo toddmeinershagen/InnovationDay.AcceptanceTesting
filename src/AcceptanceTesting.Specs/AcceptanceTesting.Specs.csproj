@@ -70,7 +70,7 @@
     <Compile Include="AddingTasksSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\TaskInfo.cs" />
-    <Compile Include="WebScenarios.cs" />
+    <Compile Include="Hooks\WebScenarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AddingTasks.feature">

@@ -28,7 +28,6 @@ namespace AcceptanceTesting.Specs
             Threaded<Session>
                 .With<LocalFirefoxEnvironment>()
                 .NavigateTo<LoggedOutPage>(_settings.BaseUrl)
-                .LoginArea
                 .Username.EnterText(_settings.ValidUserName)
                 .Password.EnterText(_settings.ValidPassword)
                 .Login.Click<LoggedInPage>();

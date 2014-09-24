@@ -80,7 +80,6 @@ namespace AcceptanceTesting.Performance
 
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
-                .LoginArea
                 .Username.EnterText(_settings.ValidUserName)
                 .Password.EnterText(_settings.ValidPassword)
                 .Login.Click<LoggedInPage>()

@@ -4,7 +4,7 @@ using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Setup;
 using TechTalk.SpecFlow;
 
-namespace AcceptanceTesting.Specs
+namespace AcceptanceTesting.Specs.Hooks
 {
     [Binding]
     public class WebScenarios
@@ -24,7 +24,6 @@ namespace AcceptanceTesting.Specs
         {
             Threaded<Session>
                 .CurrentBlock<LoggedOutPage>()
-                .LoginArea
                 .Username.EnterText(_settings.ValidUserName)
                 .Password.EnterText(_settings.ValidPassword)
                 .Login.Click<LoggedInPage>();
