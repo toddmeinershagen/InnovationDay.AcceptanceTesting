@@ -6,9 +6,9 @@ using OpenQA.Selenium;
 
 namespace AcceptanceTesting.Demo.Blocks
 {
-    public class LoggedOutPage : Block
+    public class LoginPage : Block
     {
-        public LoggedOutPage(Session session) : base(session)
+        public LoginPage(Session session) : base(session)
         {
             Tag = session.Driver.GetElement(By.TagName("body"));
         }
