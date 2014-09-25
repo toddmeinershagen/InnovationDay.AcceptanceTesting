@@ -64,7 +64,6 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\LocalChromeEnvironment.cs" />
     <Compile Include="TaskFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

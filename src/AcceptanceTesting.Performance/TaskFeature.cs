@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using AcceptanceTesting.Common.Blocks;
-using AcceptanceTesting.Performance.Infrastructure;
+using AcceptanceTesting.Common.Infrastructure;
 using AcceptanceTesting.Specs.Infrastructure;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
