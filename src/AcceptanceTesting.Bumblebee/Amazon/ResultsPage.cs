@@ -17,8 +17,8 @@ namespace AcceptanceTesting.Bumblebee.Amazon
             get
             {
                 return GetElement(By.Id("atfResults"))
-                    .GetElements(By.TagName("div"))
-                    .Where(r => WebElementConvenience.GetID((IWebElement) r).Contains("result"))
+                    .GetElements(By.ClassName("s-result-item"))
+                    .Where(e => e.GetElements(By.ClassName("s-access-detail-page")).Any())
                     .Select(r => new Result(Session, r));
             }
         }

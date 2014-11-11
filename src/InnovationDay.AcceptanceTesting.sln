@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{86359BC6-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.Demo", "AcceptanceTesting.Demo\AcceptanceTesting.Demo.csproj", "{E372DF04-37CC-4548-808B-869DA2532EE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting.FluentAutomation", "AcceptanceTesting.FluentAutomation\AcceptanceTesting.FluentAutomation.csproj", "{78C82D8D-3105-46CF-A4C6-046358806757}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = InnovationDay.AcceptanceTesting.vsmdi
@@ -78,6 +80,10 @@ Global
 		{E372DF04-37CC-4548-808B-869DA2532EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E372DF04-37CC-4548-808B-869DA2532EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E372DF04-37CC-4548-808B-869DA2532EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C82D8D-3105-46CF-A4C6-046358806757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C82D8D-3105-46CF-A4C6-046358806757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C82D8D-3105-46CF-A4C6-046358806757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C82D8D-3105-46CF-A4C6-046358806757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{49D7CC76-14AA-4D28-A2C5-E82DB3B47894} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
 		{DA08F264-4034-40E1-B0D6-AA5C1390D884} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
 		{898F66A6-EBCF-49CA-BF07-2511C951BB52} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
+		{78C82D8D-3105-46CF-A4C6-046358806757} = {320711A0-9DE4-4D5F-8477-9A036E7B6034}
 		{E372DF04-37CC-4548-808B-869DA2532EE0} = {86359BC6-ADF1-4FCD-B2F2-97B3A2CC5835}
 	EndGlobalSection
 EndGlobal

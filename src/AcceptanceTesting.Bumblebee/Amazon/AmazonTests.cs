@@ -1,7 +1,10 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using AcceptanceTesting.Common.Infrastructure;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
+using FluentAssertions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -25,8 +28,8 @@ namespace AcceptanceTesting.Bumblebee.Amazon
                 .NavigateTo<HomePage>("http://www.amazon.com")
                 .NavBar
                 .SearchField.EnterText("marriage" + Keys.Enter)
-                .Verify("that there are results", p => p.Results.Any())
-                .DebugPrint(x => x.Results.Select(r => r.Title.Text + " - " + r.Author));
+                .VerifyThat(p => p.Results.Should().NotBeEmpty())
+                .DebugPrint(x => x.Results.Select(r => r.Title.Text));
         }
     }
 }

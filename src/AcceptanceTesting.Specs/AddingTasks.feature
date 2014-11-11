@@ -13,3 +13,4 @@ Scenario: Adding a task
 	| Note  | This is a test task note. |
 	When I save the task
 	Then the task with title "Test Task" should appear in my list of tasks
+	

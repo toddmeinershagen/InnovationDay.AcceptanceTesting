@@ -14,21 +14,11 @@ namespace AcceptanceTesting.Bumblebee.Amazon
 
         public IClickable<Result> Title
         {
-            get { return new Clickable<Result>(this, GetElement(By.ClassName("newaps")).GetElement(By.TagName("a"))); }
-        }
-
-        public string Author 
-        {
-            get { return ParseAuthor(GetElement(By.CssSelector("span.med.reg")).Text); }
-        }
-
-        private string ParseAuthor(string value)
-        {
-            const int lengthOfBy = 4;
-
-            return value
-                .Substring(3, value.Length - lengthOfBy)
-                .Substring(0, value.IndexOf("(") - lengthOfBy);
+            get
+            {
+                var element = GetElement(By.ClassName("s-access-detail-page"));
+                return new Clickable<Result>(this, element);
+            }
         }
     }
 }
