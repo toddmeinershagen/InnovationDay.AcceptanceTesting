@@ -2,7 +2,6 @@
 using System.Linq;
 using Bumblebee.Extensions;
 using Bumblebee.Implementation;
-using Bumblebee.Interfaces;
 using Bumblebee.Setup;
 using OpenQA.Selenium;
 
@@ -13,9 +12,9 @@ namespace AcceptanceTesting.Common.Blocks
         public TaskList(Session session, IWebElement tag) : base(session, tag)
         {}
 
-        public IHasText Name
+        public string Name
         {
-            get { return new TextField(this, By.ClassName("name"));}
+            get { return GetElement(By.ClassName("name")).Text;}
         }
 
         public IEnumerable<TaskRow> TaskRows

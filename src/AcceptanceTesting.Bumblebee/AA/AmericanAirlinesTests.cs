@@ -1,6 +1,8 @@
 ﻿using System;
 using AcceptanceTesting.Common.Infrastructure;
+using Bumblebee.Extensions;
 using Bumblebee.Setup;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AcceptanceTesting.Bumblebee.AA
@@ -16,6 +18,7 @@ namespace AcceptanceTesting.Bumblebee.AA
                 .NavigateTo<HomePage>("https://www.aa.com/homePage.do")
                 .FindFlightArea
                 .From.EnterText("DFW")
+                .VerifyThat(p => p.From.Text.Should().Be("DFW"))
                 .LeavingOn.EnterText(DateTime.Now.AddDays(30).ToShortDateString())
                 .To.EnterText("LAS")
                 .ReturningFrom.EnterText(DateTime.Now.AddDays(37).ToShortDateString())

@@ -1,7 +1,7 @@
-﻿using AcceptanceTesting.Common.Blocks;
-using AcceptanceTesting.Common.Infrastructure;
+﻿using AcceptanceTesting.Common.Infrastructure;
 using Bumblebee.Extensions;
 using Bumblebee.Setup;
+using FluentAssertions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -30,14 +30,14 @@ namespace AcceptanceTesting.Bumblebee
             var person = new Person {FirstName = "Todd", LastName = "Meinershagen"};
 
             person
-                .Verify(x => x.FirstName == "Todd");
+                .VerifyThat(x => x.FirstName.Should().Be("Todd"));
         }
 
         [Test]
-        public void given_message()
+        public void given_message_without_expected_string_should_return_true_when_verifying_if_string_is_not_contained()
         {
             "Ellie Meinershagen"
-                .Verify("that string contains 'Todd'", x => x.Contains("Todd"));
+                .VerifyThat(x => x.Should().NotContain("Todd"));
         }
 
         [Test]

@@ -11,11 +11,11 @@ namespace AcceptanceTesting.Common.Blocks
         public TaskRow(Session session, IWebElement tag) : base(session, tag)
         {}
 
-        public IHasText Name
+        public string Name
         {
             get
             {
-                return new TextField(this, By.CssSelector("span.name.edittask"));
+                return GetElement(By.CssSelector("span.name.edittask")).Text;
             }
         }
 
